@@ -7,15 +7,16 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface SimpleApi {
-    companion object{
+    companion object {
         val SERVER_HOST = "https://jsonplaceholder.typicode.com/"
     }
+
     @GET("/posts")
     fun getAllPosts(): Call<List<Post>>
 
     @GET("/posts")
-    fun getPostsByUserId(@Query("userId")userId: Int): Call<List<Post>>
+    fun getPostsByUserId(@Query("userId") userId: Int): Call<List<Post>>
 
     @POST("/posts")
-    fun createNewPost(@Body post: Post):Call<Post>
+    fun createNewPost(@Body post: Post): Call<Post>
 }
